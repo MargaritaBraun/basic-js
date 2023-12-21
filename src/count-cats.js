@@ -14,21 +14,19 @@ const { NotImplementedError } = require('../extensions/index.js');
  * ]) => 3`
  *
  */
-let coundValue = 0;
 function countCats(matrix) {
-  throw new NotImplementedError('Not implemented');
+  let coundValue = 0;
+  
   for(i = 0; i < matrix.length; i++){
      for(j = 0; j < matrix[i].length; j++){
       let valueofarray = `${matrix[i][j]}`;
-      let newvaluearray = valueofarray.replaceAll(' ', '');
-      if (newvaluearray.includes('^^')){
+      //let newvaluearray = valueofarray.replaceAll(/ /g, '');
+      if (valueofarray === '^^'){
         coundValue++
       }
      }
-     return coundValue
-  }
- 
-
+    }
+    return coundValue
 }
 
 module.exports = {

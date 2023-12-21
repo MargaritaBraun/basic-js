@@ -12,6 +12,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function getSeason(date) {
+  //throw new NotImplementedError('Not implemented');
   //typeof date === 'undefined'
   //!date
   if (!date) {
@@ -20,7 +21,9 @@ function getSeason(date) {
   if (!(date instanceof Date) || isNaN(date)) {
     throw new Error('Invalid date!');
   }
-  
+  if (Object.prototype.toString.call(date) === '[object Function]') {
+    throw new Error('Invalid date!');
+  }
   //spring, summer, autumn (fall), winter
   const month = date.getMonth();
   if (month >= 0  && month <=1 || month == 11) {
